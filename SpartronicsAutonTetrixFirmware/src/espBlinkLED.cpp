@@ -1,7 +1,8 @@
-#ifdef ESP
+#ifdef ESP82
 // From the RobotDYN docs, the 'test esp' sketch
 #include <Arduino.h> 
-
+// I'm not really interested in getting the teest esp sketch to work...
+/*
 void setup() { 
     Serial.begin(115200);
     pinMode(14,OUTPUT);
@@ -17,11 +18,11 @@ void loop() {
     while(Serial.available()) { 
         char Rdata;
         Rdata=Serial.read();
-        if(Rdata=='A'|Rdata=='a') { 
+        if(Rdata == 'A' | Rdata=='a') { 
             digitalWrite(14,HIGH);
             delay(50); 
         }
-        else if(Rdata=='B'|Rdata=='b'){ 
+        else if(Rdata=='B'| Rdata=='b'){ 
             digitalWrite(14,LOW);
             delay(10);
             digitalWrite(14,HIGH);
@@ -30,6 +31,20 @@ void loop() {
         } else {
             digitalWrite(14,LOW); } 
         }    
+}
+*/
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(14,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  delay(100);
+  digitalWrite(14,HIGH);
+  delay(100);
+  digitalWrite(14,LOW);
 }
 
 #endif
