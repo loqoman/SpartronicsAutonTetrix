@@ -8,6 +8,8 @@
 
 #include <MachineState.h>
 
+#include <SabertoothSimplified.h>
+
 // Function defines
 static int parseUrlParams(char *queryString, char *results[][2],
                         int resultsMaxCt, boolean decodeUrl);
@@ -26,6 +28,8 @@ static MachineState sMachineState; // Create a MachineState object
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(115200);
+  
+    // SabertoothTXPinSerial.begin(9600) This goes here
 
     log("AVR Booting up...");
 }
@@ -65,7 +69,7 @@ void loop() {
                   break;
               }
           }
-          if(sVerbose)  a
+          if(sVerbose)  
               log(msg);
           for(int i=0;i<n;i++) {          // For each paramater 
               char *param = params[i][0];

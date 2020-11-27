@@ -2,6 +2,8 @@
 #ifndef MachineState_h
 #define MachineState_h
 
+#include <SabertoothSimplified.h>
+
 class MotorState {
 public:
 
